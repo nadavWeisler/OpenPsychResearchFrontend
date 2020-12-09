@@ -2,14 +2,15 @@ import React from 'react'
 import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 
-const Option = ({ name, content }) => {
+const Option = (props) => {
+    console.log(props);
     return (
         <Card>
             <CardHeader>
-                {name}
+                {props.name}
             </CardHeader>
             <CardContent>
-                {content}
+                {props.content}
             </CardContent>
         </Card>
     );

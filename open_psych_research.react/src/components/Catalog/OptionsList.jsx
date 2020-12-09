@@ -2,6 +2,7 @@ import Option from './Option'
 import React from 'react'
 
 const OptionsList = ({list_data}) => {
+    console.log(list_data);
     return (
         <div>
             {
