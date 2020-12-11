@@ -3,6 +3,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import Link from '@material-ui/core/Link';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
@@ -12,7 +13,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 
 export const mainListItems = (
     <div>
-        <ListItem button>
+        <ListItem button component={Link} href="catalog">
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
