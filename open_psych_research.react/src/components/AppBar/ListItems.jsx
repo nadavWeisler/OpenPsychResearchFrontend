@@ -1,29 +1,24 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Link from '@material-ui/core/Link';
+import { ListItemIcon, ListItemText, ListItem, ListSubheader, Link } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 
 export const mainListItems = (
-    <div>
-        <ListItem button component={Link} href="catalog">
+    <>
+        <ListItem button component={Link} href="dashboard">
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} href="mySurveys">
             <ListItemIcon>
-                <ShoppingCartIcon />
+                <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary="Orders" />
+            <ListItemText primary="My Surverys" />
         </ListItem>
         <ListItem button>
             <ListItemIcon>
@@ -43,11 +38,11 @@ export const mainListItems = (
             </ListItemIcon>
             <ListItemText primary="Integrations" />
         </ListItem>
-    </div>
+    </>
 );
 
 export const secondaryListItems = (
-    <div>
+    <>
         <ListSubheader inset>Saved reports</ListSubheader>
         <ListItem button>
             <ListItemIcon>
@@ -67,5 +62,5 @@ export const secondaryListItems = (
             </ListItemIcon>
             <ListItemText primary="Year-end sale" />
         </ListItem>
-    </div>
+    </>
 );

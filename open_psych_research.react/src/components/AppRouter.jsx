@@ -1,14 +1,13 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home'
-import Catalog from './Catalog/Catalog'
 import Dashboard from './Dashboard/Dashboard'
+import MySurveys from './MySurverys/MySurveys'
 import PageNotFound from './PageNotFound'
 import Survey from './Survey/Survey'
 import SearchAppBar from './AppBar/SearchAppBar';
-import Container from "@material-ui/core/Container";
-import {makeStyles} from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { Container, CssBaseline } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,26 +25,24 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const AppRouter = () => {
+export const AppRouter = () => {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            <CssBaseline/>
-            <SearchAppBar/>
+            <CssBaseline />
+            <SearchAppBar />
             <main className={classes.content}>
-                <div className={classes.appBarSpacer}/>
+                <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
                     <BrowserRouter>
-                        <div dir="rtl">
-                            <Switch>
-                                <Route path="/" component={Home} exact={true}/>
-                                <Route path="/catalog" component={Catalog} exact={true}/>
-                                <Route path="/dashboard" component={Dashboard} exact={true}/>
-                                <Route path="/survey/:surveyId" component={Survey} exact={true}/>
-                                <Route component={PageNotFound}/>
-                            </Switch>
-                        </div>
+                        <Switch>
+                            <Route path="/" component={Home} exact={true} />
+                            <Route path="/dashboard" component={Dashboard} exact={true} />
+                            <Route path="/mySurveys" component={MySurveys} exact={true} />
+                            <Route path="/survey/:surveyId" component={Survey} exact={true} />
+                            <Route component={PageNotFound} />
+                        </Switch>
                     </BrowserRouter>
                 </Container>
             </main>
@@ -53,4 +50,3 @@ const AppRouter = () => {
     )
 }
 
-export default AppRouter;

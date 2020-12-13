@@ -1,5 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
+import OptionsList from "./OptionsList";
 
-export default function Dashboard() {
-    return <h1>Dashboard</h1>;
+export default class Dashboard extends Component {
+    state = {
+        optionsList: []
+    }
+
+    updateOptions = (newList) => {
+        this.setState({optionsList: newList});
+    }
+
+    async componentDidMount() {
+        try {
+            const data_url = "https://api.npoint.io/aba77ace9ebffddf87fa"
+            const data = await (await fetch(data_url)).json();
+            this.updateOptions(data);
+        } catch (error) {
+            console.error(`fetch operation failed: ${error.message}`);
+        }
+    }
+
+    render() {
+        return (
+            <>
+                <OptionsList list_data={this.state.optionsList} />
+            </>
+        );
+    }
 }
+
+

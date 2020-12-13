@@ -1,11 +1,11 @@
 import React from "react"
-import {IconButton, Badge, Typography, AppBar, Toolbar, Drawer, List, Divider} from '@material-ui/core';
+import { IconButton, Badge, Typography, AppBar, Toolbar, Drawer, List, Divider } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import clsx from "clsx";
-import {mainListItems, secondaryListItems} from "./ListItems"
+import { mainListItems, secondaryListItems } from "./ListItems"
 
 const drawerWidth = 240;
 
@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        color: "white"
     },
     drawerPaper: {
         position: 'relative',
@@ -87,14 +88,14 @@ export default function SearchAppBar() {
                         onClick={handleDrawerOpen}
                         className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                         Dashboard
                     </Typography>
                     <IconButton color="inherit">
                         <Badge badgeContent={4} color="secondary">
-                            <NotificationsIcon/>
+                            <NotificationsIcon />
                         </Badge>
                     </IconButton>
                 </Toolbar>
@@ -105,12 +106,12 @@ export default function SearchAppBar() {
             >
                 <div className={classes.toolbarIcon}>
                     <IconButton onClick={handleDrawerClose}>
-                        <ChevronLeftIcon/>
+                        <ChevronLeftIcon />
                     </IconButton>
                 </div>
-                <Divider/>
+                <Divider />
                 <List>{mainListItems}</List>
-                <Divider/>
+                <Divider />
                 <List>{secondaryListItems}</List>
             </Drawer>
         </>

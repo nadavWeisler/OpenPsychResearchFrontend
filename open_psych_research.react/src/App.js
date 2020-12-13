@@ -1,9 +1,10 @@
 import './App.css';
-import AppRouter from './components/AppRouter'
+import {AppRouter} from './components/AppRouter'
+import React from "react";
 
 function App() {
   return (
-    <AppRouter/>
+    <AppRouter />
   );
 }
 
