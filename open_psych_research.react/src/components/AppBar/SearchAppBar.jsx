@@ -5,7 +5,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from "clsx";
-import { mainListItems, secondaryListItems } from "./ListItems"
+import { mainListItems } from "./ListItems"
 
 const drawerWidth = 240;
 
@@ -111,8 +111,6 @@ const SearchAppBar = () => {
                 </div>
                 <Divider />
                 <List>{mainListItems}</List>
-                <Divider />
-                <List>{secondaryListItems}</List>
             </Drawer>
         </>
     );

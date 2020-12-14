@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accordion, AccordionSummary, AccordionDetails, Divider, AccordionActions, Button } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import CreateNewDialog from './CreateNew'
+import CreateNewDialog from './CreateNewDialog'
 
 const Option = ({ name, content }) => {
     const [open, setOpen] = React.useState(false);
@@ -29,7 +29,7 @@ const Option = ({ name, content }) => {
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                    <Button size="small" color="primary" onClick={handleClickOpen}>
+                    <Button size="large" color="primary" onClick={handleClickOpen}>
                         Create New
                     </Button>
                 </AccordionActions>

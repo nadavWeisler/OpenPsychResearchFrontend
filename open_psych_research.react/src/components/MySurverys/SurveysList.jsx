@@ -6,7 +6,7 @@ const SurveysList = ({ list_data }) => {
         <>
             {
                 list_data?.map((item) => (
-                    <OneMySurvey {...item} />
+                    <OneMySurvey key={item.id} {...item} />
                 ))
             }
         </>
