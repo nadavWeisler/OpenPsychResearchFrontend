@@ -1,32 +1,24 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from 'react';
 import OptionsList from "./OptionsList";
 
-export default class Dashboard extends Component {
-    state = {
-        optionsList: []
-    }
+const Dashboard = () => {
 
-    updateOptions = (newList) => {
-        this.setState({optionsList: newList});
-    }
+    const [optionsList, setOptionsList] = useState([]);   
 
-    async componentDidMount() {
-        try {
-            const data_url = "https://api.npoint.io/aba77ace9ebffddf87fa"
-            const data = await (await fetch(data_url)).json();
-            this.updateOptions(data);
-        } catch (error) {
-            console.error(`fetch operation failed: ${error.message}`);
+    useEffect(() => {
+        async function getData() {
+            try {
+                const data_url = "https://api.npoint.io/d95adbe8638edc32d901"
+                const data = await (await fetch(data_url)).json();
+                setOptionsList([...data]);
+            } catch (error) {
+                console.error(`fetch operation failed: ${error.message}`);
+            }
         }
-    }
+        getData();
+    }, []);
 
-    render() {
-        return (
-            <>
-                <OptionsList list_data={this.state.optionsList} />
-            </>
-        );
-    }
+    return <OptionsList list_data={optionsList} />
 }
 
-
+export default Dashboard;

@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SearchAppBar() {
+const SearchAppBar = () => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
     const handleDrawerOpen = () => {
@@ -117,3 +117,5 @@ export default function SearchAppBar() {
         </>
     );
 }
+
+export default SearchAppBar;

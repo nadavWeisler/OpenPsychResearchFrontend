@@ -1,15 +1,16 @@
 import React from "react";
-import Option from "./Option";
+import OneMySurvey from "./OneMySurvey";
 
-const OptionsList = ({ list_data }) => {
+const SurveysList = ({ list_data }) => {
     return (
         <>
             {
                 list_data?.map((item) => (
-                    <Option {...item} />
+                    <OneMySurvey {...item} />
                 ))
             }
         </>
     );
 };
-export default OptionsList;
+
+export default SurveysList;
