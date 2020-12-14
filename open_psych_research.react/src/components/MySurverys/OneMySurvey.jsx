@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Accordion, AccordionSummary, AccordionDetails, AccordionActions, Button } from '@material-ui/core';
+import { AccordionActions, Button } from '@material-ui/core';
+import { Accordion, AccordionSummary, AccordionDetails } from '../DesignedComponents/Accordion'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteSurveyDialog from './DeleteSurveyDialog'
 
@@ -13,7 +14,7 @@ const OneMySurvey = ({ name, count }) => {
 
     const handleClose = () => {
         setOpen(false);
-    }; 
+    };
 
     return (
         <>
@@ -35,9 +36,12 @@ const OneMySurvey = ({ name, count }) => {
                     <Button size="large" color="primary" onClick={() => { }}>
                         Analytics
                     </Button>
+                    <Button size="large" color="primary" onClick={() => { }}>
+                        Link
+                    </Button>
                 </AccordionActions>
             </Accordion>
-            <DeleteSurveyDialog name={name} open={open} handleClose={handleClose}/>
+            <DeleteSurveyDialog name={name} open={open} handleClose={handleClose} />
         </>
     );
 }

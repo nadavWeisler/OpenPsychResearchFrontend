@@ -1,16 +1,29 @@
-import React from 'react'
-import { Accordion, AccordionSummary, AccordionDetails, Divider, AccordionActions, Button } from '@material-ui/core';
+import React, { useState } from 'react'
+import { Divider, AccordionActions, Button } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CreateNewDialog from './CreateNewDialog'
+import ResultSnackBar from '../ResultSnackBar';
+import {Accordion, AccordionSummary, AccordionDetails} from '../DesignedComponents/Accordion'
+
 
 const Option = ({ name, content }) => {
-    const [open, setOpen] = React.useState(false);
-    const handleClickOpen = () => {
-        setOpen(true);
+    const [openDialog, setOpenDialog] = useState(false);
+    const handleClickOpenDialog = () => {
+        setOpenDialog(true);
     };
 
-    const handleClose = () => {
-        setOpen(false);
+    const handleCloseDialog = () => {
+        setOpenDialog(false);
+        handleClickOpenSnackBar();
+    };
+
+    const [openSnackBar, setOpenSnackBar] = useState(false);
+    const handleClickOpenSnackBar = () => {
+        setOpenSnackBar(true);
+    };
+
+    const handleCloseSnackBar = () => {
+        setOpenSnackBar(false);
     };
 
     return (
@@ -29,12 +42,13 @@ const Option = ({ name, content }) => {
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                    <Button size="large" color="primary" onClick={handleClickOpen}>
+                    <Button size="large" color="primary" onClick={handleClickOpenDialog}>
                         Create New
                     </Button>
                 </AccordionActions>
             </Accordion>
-            <CreateNewDialog name={name} open={open} handleClose={handleClose} />
+            <CreateNewDialog name={name} open={openDialog} handleClose={handleCloseDialog} />
+            <ResultSnackBar open={openSnackBar} message="Start Survey" handleClose={handleCloseSnackBar} />
         </>
     );
 }
