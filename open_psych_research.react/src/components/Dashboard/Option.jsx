@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Divider, AccordionActions, Button } from '@material-ui/core';
+import { Divider, AccordionActions, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CreateNewDialog from './CreateNewDialog'
 import ResultSnackBar from '../ResultSnackBar';
 import {Accordion, AccordionSummary, AccordionDetails} from '../DesignedComponents/Accordion'
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
 const Option = ({ name, content }) => {
@@ -42,9 +43,9 @@ const Option = ({ name, content }) => {
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                    <Button size="large" color="primary" onClick={handleClickOpenDialog}>
-                        Create New
-                    </Button>
+                    <IconButton size="large" color="primary" onClick={handleClickOpenDialog}>
+                        <AddCircleIcon />
+                    </IconButton>
                 </AccordionActions>
             </Accordion>
             <CreateNewDialog name={name} open={openDialog} handleClose={handleCloseDialog} />

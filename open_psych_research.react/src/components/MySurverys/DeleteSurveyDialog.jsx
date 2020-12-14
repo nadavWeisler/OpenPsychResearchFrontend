@@ -25,7 +25,7 @@ const DeleteSurveyDialog = ({ name, open, handleClose }) => {
             </DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    Are you sure you want to delete new {name} survey?
+                    Are you sure you want to delete new "{name}" survey?
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

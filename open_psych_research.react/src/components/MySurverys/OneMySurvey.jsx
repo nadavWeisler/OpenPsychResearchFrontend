@@ -1,9 +1,12 @@
 
 import React from 'react';
-import { AccordionActions, Button } from '@material-ui/core';
+import { AccordionActions, IconButton } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '../DesignedComponents/Accordion'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteSurveyDialog from './DeleteSurveyDialog'
+import DeleteIcon from '@material-ui/icons/Delete'
+import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
+import LinkIcon from '@material-ui/icons/Link';
 
 const OneMySurvey = ({ name, count }) => {
 
@@ -30,15 +33,15 @@ const OneMySurvey = ({ name, count }) => {
                     {count}
                 </AccordionDetails>
                 <AccordionActions>
-                    <Button size="large" color="primary" onClick={handleClickOpen}>
-                        Delete
-                    </Button>
-                    <Button size="large" color="primary" onClick={() => { }}>
-                        Analytics
-                    </Button>
-                    <Button size="large" color="primary" onClick={() => { }}>
-                        Link
-                    </Button>
+                    <IconButton size="large" variant="outlined" color="secondary" onClick={handleClickOpen}>
+                        <DeleteIcon />
+                    </IconButton>
+                    <IconButton size="large" variant="outlined" color="inherit" onClick={() => { }}>
+                        <AssessmentOutlinedIcon />
+                    </IconButton>
+                    <IconButton size="large" variant="outlined" color="primary" onClick={() => { }}>
+                        <LinkIcon />
+                    </IconButton>
                 </AccordionActions>
             </Accordion>
             <DeleteSurveyDialog name={name} open={open} handleClose={handleClose} />
