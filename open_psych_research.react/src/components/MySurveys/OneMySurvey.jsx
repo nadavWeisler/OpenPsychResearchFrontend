@@ -39,7 +39,7 @@ const OneMySurvey = ({ name, count }) => {
                     <IconButton size="large" variant="outlined" color="inherit" onClick={() => { }}>
                         <AssessmentOutlinedIcon />
                     </IconButton>
-                    <IconButton size="large" variant="outlined" color="primary" onClick={() => { }}>
+                    <IconButton size="large" variant="outlined" color="primary" href="survey" onClick={() => { }}>
                         <LinkIcon />
                     </IconButton>
                 </AccordionActions>

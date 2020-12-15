@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home'
 import Dashboard from './Dashboard/Dashboard'
-import MySurveys from './MySurverys/MySurveys'
+import MySurveys from './MySurveys/MySurveys'
+import SurveyAnalytics from './Analytics/SurveyAnalytics'
 import PageNotFound from './PageNotFound'
 import Survey from './Survey/Survey'
 import SearchAppBar from './AppBar/SearchAppBar';
@@ -40,7 +41,9 @@ export const AppRouter = () => {
                             <Route path="/" component={Home} exact={true} />
                             <Route path="/dashboard" component={Dashboard} exact={true} />
                             <Route path="/mySurveys" component={MySurveys} exact={true} />
+                            <Route path="/survey" component={Survey} exact={true} />
                             <Route path="/survey/:surveyId" component={Survey} exact={true} />
+                            <Route path="/analytics" component={SurveyAnalytics} exact={true} />
                             <Route component={PageNotFound} />
                         </Switch>
                     </BrowserRouter>

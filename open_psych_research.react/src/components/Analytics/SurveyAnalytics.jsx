@@ -1,7 +1,8 @@
 import React from 'react'
+import Chart from './Chart'
 
 const SurveyAnalytics = () => {
-    return <h1>Survey</h1>
+    return <Chart />
 }
 
 export default SurveyAnalytics;
