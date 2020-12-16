@@ -8,7 +8,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
 import LinkIcon from '@material-ui/icons/Link';
 
-const OneMySurvey = ({ name, count }) => {
+const OneMySurvey = ({ name, count, id }) => {
 
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -36,10 +36,10 @@ const OneMySurvey = ({ name, count }) => {
                     <IconButton size="large" variant="outlined" color="secondary" onClick={handleClickOpen}>
                         <DeleteIcon />
                     </IconButton>
-                    <IconButton size="large" variant="outlined" color="inherit" onClick={() => { }}>
+                    <IconButton size="large" variant="outlined" color="inherit" href={"analytics"} surveyId={id}>
                         <AssessmentOutlinedIcon />
                     </IconButton>
-                    <IconButton size="large" variant="outlined" color="primary" href="survey" onClick={() => { }}>
+                    <IconButton size="large" variant="outlined" color="primary" href="survey" surveyId={id}>
                         <LinkIcon />
                     </IconButton>
                 </AccordionActions>

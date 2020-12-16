@@ -1,19 +1,20 @@
 import React from 'react';
-import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core';
+import { FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core';
+import {DesignedFormControl} from './../DesignedComponents/FormControls'
 
 
-const Question = ({ prompt, options, required }) => {
+const Question = ({ key, prompt, options, required }) => {
     const listItem = options.map((option) => (
-        <FormControlLabel key value={option} control={<Radio />} label={option} />
+        <FormControlLabel key={key} value={option} control={<Radio />} label={option} />
     ));
 
     return (
-        <FormControl component="fieldset">
-            <FormLabel component="legend">{prompt}</FormLabel>
-            <RadioGroup aria-label="gender" name="gender1">
+        <DesignedFormControl required={required}>
+            <FormLabel>{prompt}</FormLabel>
+            <RadioGroup>
                 {listItem}
             </RadioGroup>
-        </FormControl>
+        </DesignedFormControl>
     );
 }
 

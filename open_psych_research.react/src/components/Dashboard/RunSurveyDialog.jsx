@@ -1,18 +1,19 @@
 import React from 'react'
-import { Paper, Dialog, DialogContent, DialogActions, Button, DialogTitle, TextField } from '@material-ui/core';
+import { Dialog, DialogContent, DialogActions, Button, DialogTitle, TextField } from '@material-ui/core';
 import Draggable from 'react-draggable';
+import {DesignedPaper} from './../DesignedComponents/Paper';
 
 
 const PaperComponent = (props) => {
     return (
         <Draggable handle="#draggable-dialog-title" cancel={'[class*="MuiDialogContent-root"]'}>
-            <Paper {...props} />
+            <DesignedPaper {...props} />
         </Draggable>
     );
 }
 
 
-const CreateNewDialog = ({ name, open, handleClose }) => {
+const RunSurveyDialog = ({ name, open, handleClose }) => {
     return (
         <Dialog
             open={open}
@@ -21,7 +22,7 @@ const CreateNewDialog = ({ name, open, handleClose }) => {
             aria-labelledby="draggable-dialog-title"
         >
             <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-                Create new "{name}" survey
+                Run "{name}" survey
             </DialogTitle>
             <DialogContent>
                 <TextField id="standard-basic" label="Enter survey name" />
@@ -31,11 +32,11 @@ const CreateNewDialog = ({ name, open, handleClose }) => {
                     Cancel
                 </Button>
                 <Button onClick={handleClose} color="primary">
-                    Create
+                    Confirm
                 </Button>
             </DialogActions>
         </Dialog>
     );
 }
 
-export default CreateNewDialog;
+export default RunSurveyDialog;

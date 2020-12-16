@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import SurveysList from './SurveysList'
+import SurveysList from './SurveysList';
+import { DesignedBigHeader } from "./../DesignedComponents/Headers";
 
 const MySurveys = () => {
 
@@ -18,7 +19,15 @@ const MySurveys = () => {
         getData();
     }, []);
 
-    return <SurveysList list_data={surveysList} />
+    return (
+        <>
+            <DesignedBigHeader component="h1" variant="h4" align="center">
+                My Running Surveys
+            </DesignedBigHeader>    
+            <SurveysList list_data={surveysList} />
+        </>
+    );
 }
+    
 
 export default MySurveys;

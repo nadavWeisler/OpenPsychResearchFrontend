@@ -1,12 +1,13 @@
 import React from 'react'
-import { Paper, Dialog, DialogContent, DialogContentText, DialogActions, Button, DialogTitle } from '@material-ui/core';
+import { Dialog, DialogContent, DialogContentText, DialogActions, Button, DialogTitle } from '@material-ui/core';
 import Draggable from 'react-draggable';
+import { DesignedPaper } from './../DesignedComponents/Paper';
 
 
 const PaperComponent = (props) => {
     return (
         <Draggable handle="#draggable-dialog-title" cancel={'[class*="MuiDialogContent-root"]'}>
-            <Paper {...props} />
+            <DesignedPaper {...props} />
         </Draggable>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Divider, AccordionActions, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import CreateNewDialog from './CreateNewDialog'
+import RunSurveyDialog from './RunSurveyDialog'
 import ResultSnackBar from '../ResultSnackBar';
 import {Accordion, AccordionSummary, AccordionDetails} from '../DesignedComponents/Accordion'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
@@ -48,7 +48,7 @@ const Option = ({ name, content }) => {
                     </IconButton>
                 </AccordionActions>
             </Accordion>
-            <CreateNewDialog name={name} open={openDialog} handleClose={handleCloseDialog} />
+            <RunSurveyDialog name={name} open={openDialog} handleClose={handleCloseDialog} />
             <ResultSnackBar open={openSnackBar} message="Start Survey" handleClose={handleCloseSnackBar} />
         </>
     );
