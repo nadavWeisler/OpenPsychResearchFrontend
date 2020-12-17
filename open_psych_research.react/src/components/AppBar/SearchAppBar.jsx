@@ -1,5 +1,5 @@
 import React from "react"
-import { IconButton, Badge, Typography, AppBar, Toolbar, Drawer, List, Divider, MenuItem, Menu } from '@material-ui/core';
+import { IconButton, Badge, Button, AppBar, Toolbar, Drawer, List, Divider, MenuItem, Menu } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
