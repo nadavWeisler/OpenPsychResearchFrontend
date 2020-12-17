@@ -1,5 +1,5 @@
 import React from "react"
-import { IconButton, Badge, Typography, AppBar, Toolbar, Drawer, List, Divider } from '@material-ui/core';
+import { IconButton, Badge, AppBar, Toolbar, Drawer, List, Divider, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -90,9 +90,9 @@ const SearchAppBar = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+                    <Button className={classes.title} href="/">
                         Dashboard
-                    </Typography>
+                    </Button>
                     <IconButton color="inherit">
                         <Badge badgeContent={4} color="secondary">
                             <NotificationsIcon />
