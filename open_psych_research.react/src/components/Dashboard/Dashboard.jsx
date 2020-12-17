@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import OptionsList from "./OptionsList";
+import { DesignedBigHeader } from "./../DesignedComponents/Headers";
 
 const Dashboard = () => {
-
-    const [optionsList, setOptionsList] = useState([]);   
+    const [optionsList, setOptionsList] = useState([]);
 
     useEffect(() => {
         async function getData() {
@@ -18,7 +18,15 @@ const Dashboard = () => {
         getData();
     }, []);
 
-    return <OptionsList list_data={optionsList} />
+    return (
+        <>
+            <DesignedBigHeader component="h1" variant="h4" align="center">
+                Surveys Dashboard
+            </DesignedBigHeader>
+            <OptionsList list_data={optionsList} />
+        </>
+    );
+
 }
 
 export default Dashboard;

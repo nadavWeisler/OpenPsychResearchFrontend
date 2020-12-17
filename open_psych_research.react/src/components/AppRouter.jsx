@@ -2,12 +2,14 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home'
 import Dashboard from './Dashboard/Dashboard'
-import MySurveys from './MySurverys/MySurveys'
+import MySurveys from './MySurveys/MySurveys'
+import SurveyAnalytics from './Analytics/SurveyAnalytics'
 import PageNotFound from './PageNotFound'
 import Survey from './Survey/Survey'
 import SearchAppBar from './AppBar/SearchAppBar';
 import { Container, CssBaseline } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { DesignedPaper } from "./DesignedComponents/Paper";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,15 +37,18 @@ export const AppRouter = () => {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <BrowserRouter>
-                        <Switch>
-                            <Route path="/" component={Home} exact={true} />
-                            <Route path="/dashboard" component={Dashboard} exact={true} />
-                            <Route path="/mySurveys" component={MySurveys} exact={true} />
-                            <Route path="/survey/:surveyId" component={Survey} exact={true} />
-                            <Route component={PageNotFound} />
-                        </Switch>
-                    </BrowserRouter>
+                    <DesignedPaper>
+                        <BrowserRouter>
+                            <Switch>
+                                <Route path="/" component={Home} exact />
+                                <Route path="/dashboard" component={Dashboard} />
+                                <Route path="/mySurveys" component={MySurveys} />
+                                <Route path="/survey" component={Survey} />
+                                <Route path="/analytics" component={SurveyAnalytics} />
+                                <Route component={PageNotFound} />
+                            </Switch>
+                        </BrowserRouter>
+                    </DesignedPaper>
                 </Container>
             </main>
         </div>
