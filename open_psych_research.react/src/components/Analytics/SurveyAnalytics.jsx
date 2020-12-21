@@ -1,6 +1,5 @@
 import React from 'react'
 import Analytics from './Analytics'
-import Carousel from 'react-material-ui-carousel'
 import { withRouter } from 'react-router-dom'
 import { DesignedBigHeader } from "./../DesignedComponents/Headers";
 
@@ -17,18 +16,14 @@ const SurveyAnalytics = (surveyId) => {
         { year: '1990', population: 5.310 },
         { year: '2000', population: 6.127 },
         { year: '2010', population: 6.930 },
-      ];
-      
+    ];
+
     return (
         <>
             <DesignedBigHeader component="h1" variant="h4" align="center">
                 Survey Analytics
             </DesignedBigHeader>
-            <Carousel navButtonsAlwaysVisible>
-                {
-                    items.map(() => { return <Analytics key={surveyId} prompt="Survey Name" answers={demo_data}/> })
-                }
-            </Carousel>
+            <Analytics key={surveyId} prompt="Survey Name" answers={demo_data} />
         </>
     )
 }

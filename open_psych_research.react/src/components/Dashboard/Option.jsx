@@ -3,7 +3,7 @@ import { Divider, AccordionActions, IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import RunSurveyDialog from './RunSurveyDialog'
 import ResultSnackBar from '../ResultSnackBar';
-import {Accordion, AccordionSummary, AccordionDetails} from '../DesignedComponents/Accordion'
+import { Accordion, AccordionSummary, AccordionDetails } from '../DesignedComponents/Accordion'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
@@ -30,25 +30,20 @@ const Option = ({ name, content }) => {
     return (
         <>
             <Accordion>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                >
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}                >
                     {name}
-
                 </AccordionSummary>
-                <AccordionDetails
-                    expandIcon={<ExpandMoreIcon />}
-                >
+                <AccordionDetails expandIcon={<ExpandMoreIcon />}                 >
                     {content}
                 </AccordionDetails>
                 <Divider />
                 <AccordionActions>
-                    <IconButton size="large" color="primary" onClick={handleClickOpenDialog}>
+                    <IconButton size="medium" color="primary" onClick={handleClickOpenDialog}>
                         <AddCircleIcon />
                     </IconButton>
                 </AccordionActions>
             </Accordion>
-            <RunSurveyDialog name={name} open={openDialog} handleClose={handleCloseDialog} />
+            <RunSurveyDialog name={name} open={openDialog} handleCancel={() => { setOpenDialog(false) }} handleClose={handleCloseDialog} />
             <ResultSnackBar open={openSnackBar} message="Start Survey" handleClose={handleCloseSnackBar} />
         </>
     );

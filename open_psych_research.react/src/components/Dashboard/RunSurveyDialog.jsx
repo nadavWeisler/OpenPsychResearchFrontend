@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dialog, DialogContent, DialogActions, Button, DialogTitle, TextField } from '@material-ui/core';
 import Draggable from 'react-draggable';
-import {DesignedPaper} from './../DesignedComponents/Paper';
+import { DesignedPaper } from './../DesignedComponents/Paper';
 
 
 const PaperComponent = (props) => {
@@ -13,11 +13,13 @@ const PaperComponent = (props) => {
 }
 
 
-const RunSurveyDialog = ({ name, open, handleClose }) => {
+const RunSurveyDialog = ({ name, open, handleClose, handleCancel }) => {
     return (
         <Dialog
+            onAbort={handleCancel}
             open={open}
             onClose={handleClose}
+            onCancel
             PaperComponent={PaperComponent}
             aria-labelledby="draggable-dialog-title"
         >
@@ -28,7 +30,7 @@ const RunSurveyDialog = ({ name, open, handleClose }) => {
                 <TextField id="standard-basic" label="Enter survey name" />
             </DialogContent>
             <DialogActions>
-                <Button autoFocus onClick={handleClose} color="primary">
+                <Button autoFocus onClick={handleCancel} color="primary">
                     Cancel
                 </Button>
                 <Button onClick={handleClose} color="primary">

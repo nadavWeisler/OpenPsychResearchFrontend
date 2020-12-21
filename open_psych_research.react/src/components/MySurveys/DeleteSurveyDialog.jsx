@@ -13,10 +13,11 @@ const PaperComponent = (props) => {
 }
 
 
-const DeleteSurveyDialog = ({ name, open, handleClose }) => {
+const DeleteSurveyDialog = ({ name, open, handleClose, handleCancel }) => {
     return (
         <Dialog
             open={open}
+            onAbort={handleCancel}
             onClose={handleClose}
             PaperComponent={PaperComponent}
             aria-labelledby="draggable-dialog-title"
@@ -30,12 +31,12 @@ const DeleteSurveyDialog = ({ name, open, handleClose }) => {
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button autoFocus onClick={handleClose} color="primary">
+                <Button autoFocus onClick={handleCancel} color="primary">
                     Cancel
-          </Button>
+                </Button>
                 <Button onClick={handleClose} color="primary">
                     delete
-          </Button>
+                </Button>
             </DialogActions>
         </Dialog>
     );

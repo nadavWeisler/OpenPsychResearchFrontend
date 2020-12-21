@@ -12,4 +12,5 @@ const OptionsList = ({ list_data }) => {
         </>
     );
 };
+
 export default OptionsList;
