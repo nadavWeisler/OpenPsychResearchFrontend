@@ -1,6 +1,5 @@
 import React from "react"
 import { IconButton, Badge, Button, AppBar, Toolbar, Drawer, List, Divider, MenuItem, Menu } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { makeStyles } from '@material-ui/core/styles';
@@ -167,37 +166,15 @@ const SearchAppBar = () => {
         </Menu>
     );
 
-    const [open, setOpen] = React.useState(true);
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
-
-
+    const [open] = React.useState(false);
 
     return (
         <>
             <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
                 <Toolbar className={classes.toolbar}>
-                    <IconButton
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
-                    >
-                        <MenuIcon />
-                    </IconButton>
                     <Button className={classes.title} href="/">
                         Dashboard
                     </Button>
-                    <IconButton color="inherit">
-                        <Badge badgeContent={4} color="secondary">
-                            <NotificationsIcon />
-                        </Badge>
-                    </IconButton>
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
@@ -239,7 +216,7 @@ const SearchAppBar = () => {
                 paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
             }} open={open}>
                 <div className={classes.toolbarIcon}>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton>
                         <ChevronLeftIcon />
                     </IconButton>
                 </div>

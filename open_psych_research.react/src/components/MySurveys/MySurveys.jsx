@@ -7,6 +7,7 @@ const MySurveys = () => {
 
     const [originalSurveysList, setOriginalSurveysList] = useState([]);
     const [surveysList, setSurveysList] = useState([]);
+    const [filterString, setfilterString] = useState("");
 
     useEffect(() => {
         async function getData() {
@@ -19,10 +20,11 @@ const MySurveys = () => {
             }
         }
         getData();
-    }, []);
+        setSurveysList(originalSurveysList.filter(filterStr => filterStr.name.includes(filterString)));
+    }, [filterString, originalSurveysList]);
 
     const onFilter = (textInput) => {
-        setSurveysList(originalSurveysList.filter(item => item.name.includes(textInput)));
+        setfilterString(textInput);
     }
 
     return (
